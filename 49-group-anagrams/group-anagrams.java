@@ -6,19 +6,14 @@ class Solution {
             char[] arr = st.toCharArray();
             Arrays.sort(arr);
             String res = new String(arr);
-            // if (map.containsKey(res)) {
-            //     map.get(res).add(st);
-            // } else {
-            //     List<String> list = new ArrayList<>();
-            //     list.add(st);
-            //     map.put(res, list);
-            // }
-            map.putIfAbsent(res, new ArrayList<>());
+            if (!map.containsKey(res)) {
+                map.put(res,new ArrayList<>());
+            }
             map.get(res).add(st);
         }
-        for (List<String> list: map.values()){
-            ans.add(new ArrayList<>(list));
-        }
-        return ans;
+        // for (List<String> list: map.values()){
+        //     ans.add(new ArrayList<>(list));
+        // }
+        return new ArrayList<>(map.values());
     }
 }
