@@ -13,7 +13,7 @@ class Solution {
                 }
                 else{
                     st.pop();
-                    ans[i]=0;
+                   // ans[i]=0;
                 }
             }
             st.push(i);
